@@ -98,6 +98,7 @@ int main(void)
     size_t i;
     long total = 0;
     pthread_t ts[N_THREADS];
+    clock_t start, end;
     
     srand(time(NULL));
 
@@ -112,6 +113,7 @@ int main(void)
     /**
      * 创建多个线程并开始执行； pthread_create() 是唯一一个引起并发的函数
      */ 
+    start = clock();
     for ( i = 0; i < N_THREADS; i++)
     {
         pthread_create(&ts[i], NULL, disburse, NULL);
@@ -122,7 +124,8 @@ int main(void)
     {
         pthread_join(ts[i], NULL);
     }
-    
+    end = clock();
+    printf("耗时：%lf \n", (double)(end - start));
     // 计算最终银行总额
     for ( i = 0; i < N_ACCOUNTS; i++)
     {

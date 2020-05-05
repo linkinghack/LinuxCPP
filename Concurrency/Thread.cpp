@@ -1,5 +1,5 @@
 /**
- *This code file shows the example of using 'pthread' library
+ *This code file shows an example of C++11 Thread
  * to run threads.
  * To compile : 
  * g++ -std=c++11 Thread.cpp -lpthread

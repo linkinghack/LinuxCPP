@@ -1,6 +1,6 @@
 /* banker.c */
 /**
- * 演示Pthread 事件机制
+ * 演示Pthread 事件机制(Condition Variable)
  * 
  * pthread_cond_broadcast(*cond) 将通知所有等待cond的线程开始运行(一个cond可能被多个线程监听)
  * pthread_cond_signal(*cond) 将只通知一个正在等待cond的线程，在共享队列数据的时候可能有用
